@@ -1,22 +1,13 @@
-package br.com.anpede.entities;
+package br.com.anpede.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import br.com.anpede.entities.Associado;
 
-@Entity
-@Table(name = "tb_associado")
-public class Associado implements Serializable{
+public class AssociadoDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String CPF;
@@ -25,11 +16,11 @@ public class Associado implements Serializable{
 	private String email;
 	private String endereco;
 	
-	public Associado() {
-		
+	public AssociadoDTO() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public Associado(Long id, String nome, String CPF, LocalDate dataNascimento, String telefone, String email, String endereco) {
+	public AssociadoDTO(Long id, String nome, String CPF, LocalDate dataNascimento, String telefone, String email, String endereco) {
 		this.id = id;
 		this.nome = nome;
 		this.CPF = CPF;
@@ -37,6 +28,16 @@ public class Associado implements Serializable{
 		this.telefone = telefone;
 		this.email = email;
 		this.endereco = endereco;
+	}
+	
+	public AssociadoDTO(Associado entity) {
+		this.id = entity.getId();
+		this.nome = entity.getNome();
+		this.CPF = entity.getCPF();
+		this.dataNascimento = entity.getDataNascimento();
+		this.telefone = entity.getTelefone();
+		this.email = entity.getEmail();
+		this.endereco = entity.getEndereco();
 	}
 
 	public Long getId() {
@@ -94,26 +95,8 @@ public class Associado implements Serializable{
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Associado other = (Associado) obj;
-		return Objects.equals(id, other.id);
-	}
-
+	
 	
 	
 	
 }
-		
