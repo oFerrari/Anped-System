@@ -9,12 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import br.com.anpede.services.exceptions.EntityNotFoundException;
+import br.com.anpede.services.exceptions.ResourceNotFoundException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
-	@ExceptionHandler(EntityNotFoundException.class)
-	public ResponseEntity<StandartError> entityNotFound(EntityNotFoundException e, HttpServletRequest request){
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<StandartError> entityNotFound(ResourceNotFoundException e, HttpServletRequest request){
 		//Instanciamos uma mensagem de erro com base no padrão que criamos
 		StandartError error = new StandartError();
 		//Horário da ocorrencia
