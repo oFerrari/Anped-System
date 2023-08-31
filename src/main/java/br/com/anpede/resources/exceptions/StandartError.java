@@ -1,4 +1,4 @@
-package br.com.anpede.resources.excepions;
+package br.com.anpede.resources.exceptions;
 
 import java.io.Serializable;
 import java.time.Instant;
