@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import javax.persistence.EntityNotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -15,6 +13,7 @@ import br.com.anpede.dto.AssociadoDTO;
 import br.com.anpede.entities.Associado;
 import br.com.anpede.repositories.AssociadoRepository;
 import br.com.anpede.services.exceptions.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class AssociadoService {
